@@ -32,7 +32,7 @@ function Admin() {
                     <Card img="/agreement.svg" buttonText={"Manifiesto De Carga"} click={(e) => redirection("ManifiestoDeCarga")} />
                 </div>
             </div>
-        </Layout>
+        </Layout> 
 
     )
 }
