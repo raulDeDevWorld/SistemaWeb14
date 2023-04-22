@@ -341,25 +341,29 @@ const PDFView = ({ click }) => {
                             <View style={styles.viewKeyValue}>
                                 <Text style={styles.key}>DOCUMENTACION SOPORTE</Text>
                                 <Text style={styles.key}>INSTRUCCIONES DEL TRANSPORTE</Text>
-                            </View>
-                            <View style={styles.viewKeyValue}>
                                 <Text style={styles.key}>DOCUMENTO</Text>
                                 <Text style={styles.key}>NUMERO</Text>
-                                <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION1"] && pdfData["MC-INSTRUCCION1"]}</Text>
-                                <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION2"] && pdfData["MC-INSTRUCCION2"]}</Text>
                             </View>
+                            {
+                            pdfData.incluye && pdfData.incluye.map((i, index) => {
+                                return (
+                                    <View style={styles.viewKeyValue} key={index}>
+                                    <Text style={styles.value}>{pdfData && pdfData["MC-DOC1"] && pdfData["MC-DOC1"]}</Text>
+                                    <Text style={styles.value}>{pdfData && pdfData["MC-NUM1"] && pdfData["MC-NUM1"]}</Text>
+                                    <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION3"] && pdfData["MC-INSTRUCCION3"]}</Text>
+                                    <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION4"] && pdfData["MC-INSTRUCCION4"]}</Text>
+                                </View>
+                               
+                                )
+                            })
+                        }
                             <View style={styles.viewKeyValue}>
                                 <Text style={styles.value}>{pdfData && pdfData["MC-DOC1"] && pdfData["MC-DOC1"]}</Text>
                                 <Text style={styles.value}>{pdfData && pdfData["MC-NUM1"] && pdfData["MC-NUM1"]}</Text>
                                 <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION3"] && pdfData["MC-INSTRUCCION3"]}</Text>
                                 <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION4"] && pdfData["MC-INSTRUCCION4"]}</Text>
                             </View>
-                            <View style={styles.viewKeyValue}>
-                                <Text style={styles.value}>{pdfData && pdfData["MC-DOC2"] && pdfData["MC-DOC2"]}</Text>
-                                <Text style={styles.value}>{pdfData && pdfData["MC-NUM2"] && pdfData["MC-NUM2"]}</Text>
-                                <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION3"] && pdfData["MC-INSTRUCCION5"]}</Text>
-                                <Text style={styles.value}>{pdfData && pdfData["MC-INSTRUCCION4"] && pdfData["MC-INSTRUCCION6"]}</Text>
-                            </View>
+                            
 
                         </View>
 
